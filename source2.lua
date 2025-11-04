@@ -877,7 +877,11 @@ do
 			-- // Overwriting settings
 			for i,v in pairs(dataOptions) do
 				if (module.Options[i] and i ~= "Update") then
-					module.Options[i] = tostring(v)
+					if i == "toggled" then
+						module.Options[i] = v
+					else
+						module.Options[i] = tostring(v)
+					end
 				end
 			end
 
@@ -1113,7 +1117,11 @@ do
 			-- // Overwriting settings
 			for i,v in pairs(dataOptions) do
 				if (module.Options[i] and i ~= "Update") then
-					module.Options[i] = tostring(v)
+					if i == "key" then
+						module.Options[i] = v
+					else
+						module.Options[i] = tostring(v)
+					end
 				end
 			end
 
@@ -1646,7 +1654,11 @@ do
 			-- // Overwriting settings
 			for i,v in pairs(dataOptions) do
 				if (module.Options[i] and i ~= "Update") then
-					module.Options[i] = tostring(v)
+					if i == "default" and typeof(v) == "Color3" or typeof(v) == "table" then
+						module.Options[i] = v
+					else
+						module.Options[i] = tostring(v)
+					end
 				end
 			end
 
@@ -1812,7 +1824,11 @@ do
 			-- // Overwriting settings
 			for i,v in pairs(dataOptions) do
 				if (module.Options[i] and i ~= "Update") then
-					module.Options[i] = tostring(v)
+					if i == "value" then
+						module.Options[i] = tonumber(v) or v
+					else
+						module.Options[i] = tostring(v)
+					end
 				end
 			end
 
